@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Indexing Site</title>	
+	</head>
+	<body>
+		<div>
+			<p>
+				<ul>
+					<li><a href="#one">Python Shallow copy</a></li>
+					<li><a href="#two">Python copy an object</a></li>
+					<li><a href="#three">Python references will be taken</a></li>
+				</ul>
+			</p>
+		</div>
+		<div>
+			<h1 id="one">Python Shallow copy</h1>
+			<p>
+			<pre>
+				Shallow Copy
+				When we create an object in Python, then assign that object to another variable, Python doesn't copy the object. Instead, it copies only a reference to the object.
+				nilesh@nilesh-X540YA:~$ ls 
+				deja-dup  Desktop  Documents  Downloads  examples.desktop  Music  Pictures  projects  Public  Templates  typeCheck.py  untitled-4.py  Videos 
+				nilesh@nilesh-X540YA:~$ clear 
+				nilesh@nilesh-X540YA:~$ python 
+				Python 2.7.6 (default, Nov 23 2017, 15:49:48) 
+				[GCC 4.8.4] on linux2 
+				Type "help", "copyright", "credits" or "license" for more information. 
+				>>> person = ['name',['savings',100.0]] 
+				>>> type(person) 
+				<type 'list'>
+			</pre>
+			</p>
+		</div>
+		<div>
+			<h1 id="two">Python copy an object</h1>
+			<p>
+			<pre>
+				How to copy an object
+				>>>customer = copy.copy(person)
+				>>> husband = person[:] 
+				>>> husband 
+				['name', ['savings', 100.0]] 
+				>>> wifey = list(person) 
+				>>> wifey 
+				['name', ['savings', 100.0]] 
+				>>> [id(x) for x in person,husband,wifey] 
+				[140502587231840, 140502587309520, 140502587309952] 
+
+				>>>wifey[1][1]=50.0
+				>>>wifey
+				['name', ['savings', 50.0]]
+				>>>husband
+				['name', ['savings', 50.0]]
+				>>>person
+				['name', ['savings', 50.0]]
+			</pre>
+			</p>
+		</div>
+		<div>
+			<h1 id="three">Python references will be taken</h1>
+			<p>
+			<pre>
+				The values for all references will update. This is because we did shallow copy. 
+				[id(x) for x in wifey]
+				[139884202593904, 139884171147960]
+				[id(x) for x in husband]
+				[139884202593904, 139884171147960]
+				[id(x) for x in person]
+				[139884202593904, 139884171147960]
+				wifey[0] = 'Teena'
+				wifey
+				['Teena', ['savings', 50.0]]
+				husband
+				['name', ['savings', 50.0]]
+				husband[0] = 'Roy'
+				husband
+				['Roy', ['savings', 50.0]]
+				[id(x) for x in wifey]
+				[139884176597904, 139884171147960]
+				[id(x) for x in husband]
+				[139884171081528, 139884171147960]
+				String object is immutable so new object is created but list objects are mutable so it doesn't doesn't change id only reference is created.	
+			</pre>
+			</p>
+		</div>
+	</body>
+</html>
