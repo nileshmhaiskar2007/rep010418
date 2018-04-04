@@ -1,0 +1,63 @@
+
+#header {
+	border:5px solid blue;
+	text-align:center;
+}
+
+h1 {
+		background-color:lightgrey;
+		color:blue;
+	}
+
+h3 {
+	color:blue;
+}
+
+#top {
+	background-color:white;
+	width:100%;
+}
+
+table {
+	border:1px solid black;
+	width:100%;
+	border-collapse:collapse;
+}
+
+th, td {
+	border:2px solid black;
+	text-align:center;
+	padding:5px;
+}
+th {
+	background-color:lightgrey;
+}
+
+#leftpanel {
+	border:2px solid red;
+	padding:5px;
+	
+}
+
+li {
+	color:red;
+}
+
+img {
+	width:100%;
+}
+#nav {
+	border:1px solid red;
+	padding:5px;
+}
+
+#rightpanel {
+	border:2px solid red;
+	padding:5px;
+	
+}
+
+#footer {
+	text-align:center;
+	color:green;
+}
